@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>News & Updates | Uhuru Peak School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="uhuru.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="images/uhuru.jpg" alt="Uhuru Peak School">
+      <span>Uhuru Peak School</span>
+    </div>
+    <div class="humburger" onclick="toggleMenu()">MENU <i class="fas fa-bars"></i></div>
+  </div>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="menu">
+  <div class="menu-header">
+    <h3>MENU</h3>
+    <i class="fas fa-times" onclick="toggleMenu()"></i>
+  </div>
+
+  <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search news...">
+  </div>
+
+  <div class="menu-list">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="admission.html">Admission</a>
+    <a href="academics.html">Academics</a>
+    <a href="programs.html">Programs</a>
+    <a href="staff.html">Staff</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>School News & Updates</h1>
+  <p>Latest announcements and activities</p>
+</div>
+
+<!-- NEWS SECTION -->
+<section style="background:var(--light)">
+  <div class="container">
+    <div class="section-title">
+      <h2>Latest News</h2>
+    </div>
+
+    <div class="cards">
+      <div class="news-item">
+        <h3>Opening of New Academic Year</h3>
+        <span>January 2026</span>
+        <p>
+          Uhuru Peak School welcomes all pupils for the new academic year.
+          Parents are encouraged to complete registration early.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h3>Inter-School Sports Competition</h3>
+        <span>March 2026</span>
+        <p>
+          Our pupils will participate in district-level sports competitions
+          promoting teamwork and talent development.
+        </p>
+      </div>
+
+      <div class="news-item">
+        <h3>Parents & Teachers Meeting</h3>
+        <span>April 2026</span>
+        <p>
+          A general meeting will be held to discuss academic performance
+          and student welfare.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-social">
+    <a><i class="fab fa-facebook-f"></i></a>
+    <a><i class="fab fa-instagram"></i></a>
+    <a><i class="fab fa-x-twitter"></i></a>
+  </div>
+  <p>© 2026 Uhuru Peak School | Education Is Gold</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById('menu').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

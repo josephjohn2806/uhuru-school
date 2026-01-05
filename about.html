@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About Us | Uhuru Peak School</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="uhuru.css">
+
+</head>
+
+<body>
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <img src="images/uhuru.jpg">
+      <span>Uhuru Peak School</span>
+    </div>
+    <div class="humburger" onclick="toggleMenu()">MENU <i class="fas fa-bars"></i></div>
+  </div>
+</header>
+
+<!-- MENU -->
+<div class="mobile-menu" id="menu">
+  <div class="menu-header">
+    <h3>MENU</h3>
+    <i class="fas fa-times" onclick="toggleMenu()"></i>
+  </div>
+  <div class="search-box">
+    <i class="fas fa-search"></i>
+    <input type="text" placeholder="Search...">
+  </div>
+  <div class="menu-list">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="admission.html">Admission</a>
+    <a href="academics.html">Academics</a>
+    <a href="programs.html">Programs</a>
+    <a href="staff.html">Staff</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</div>
+
+<section class="hero">
+  <h1>About Uhuru Peak School</h1>
+  <p>Education Is Gold</p>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Who We Are</h2>
+    <p>
+      Uhuru Peak School is dedicated to providing quality, affordable and holistic
+      education that nurtures academic excellence, discipline, and moral values.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-social">
+    <a><i class="fab fa-facebook-f"></i></a>
+    <a><i class="fab fa-instagram"></i></a>
+    <a><i class="fab fa-x-twitter"></i></a>
+  </div>
+  <p>© 2026 Uhuru Peak School</p>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('menu').classList.toggle('active')}
+</script>
+</body>
+</html>
