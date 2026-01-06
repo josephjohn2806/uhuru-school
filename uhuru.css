@@ -315,3 +315,43 @@ color: #1e73be;
 cursor: pointer;
 
 }
+
+/* ===== HAMBURGER ICON ===== */
+.hamburger{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.hamburger span{
+  width: 28px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 3px;
+}
+
+/* ===== HEADER LAYOUT ===== */
+.header-inner{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu{
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  height: 100%;
+  background: #fff;
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.mobile-menu.active{
+  right: 0;
+}
+
