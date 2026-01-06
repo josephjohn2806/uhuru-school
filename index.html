@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <title>Uhuru Peak School | Education Is Gold</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
@@ -63,15 +66,12 @@ header{
 }
 
 /* ================= HAMBURGER ================= */
-.menu-btn{
-  cursor:pointer;
-}
-
 .hamburger{
   width:26px;
   display:flex;
   flex-direction:column;
   gap:5px;
+  cursor:pointer;
 }
 
 .hamburger span{
@@ -103,7 +103,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:25px;
+  margin-bottom:20px;
 }
 
 .menu-header h3{
@@ -149,7 +149,7 @@ header{
 .hero{
   margin-top:80px;
   background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-  url("https://images.unsplash.com/photo-") center/cover;
+  url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80") center/cover;
   color:#fff;
   padding:90px 20px;
   text-align:center;
@@ -239,7 +239,7 @@ footer{
 
 /* Desktop hide hamburger */
 @media(min-width:768px){
-  .menu-btn{
+  .hamburger{
     display:none;
   }
 }
@@ -256,12 +256,12 @@ footer{
       <span>Uhuru Peak School</span>
     </div>
 
-    <!-- THREE HORIZONTAL LINES -->
     <div class="hamburger" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </header>
 
 <!-- ================= MOBILE MENU ================= -->
@@ -281,9 +281,10 @@ footer{
     <a href="programs.html">Programs</a>
     <a href="admission.html">Admission</a>
     <a href="news.html">News</a>
-    <a href="contacts.html">Contact</a>
-    <a href="staffs.html">staff</a>
+    <a href="contacts.html">Contacts</a>
+    <a href="staffs.html">Staff</a>
   </div>
+</div>
 
 <!-- ================= HERO ================= -->
 <div class="hero">
@@ -310,19 +311,12 @@ footer{
   <div class="container cards">
     <div class="card">
       <h3>Vision</h3>
-      <p>
-        To ensure quality and affordable education is provided to all deserving
-        children without discrimination.
-      </p>
+      <p>To ensure quality and affordable education for all.</p>
     </div>
-
     <div class="card">
       <h3>Mission</h3>
-      <p>
-        To offer holistic education focusing on mental, spiritual and social growth.
-      </p>
+      <p>To offer holistic education focusing on mental, spiritual and social growth.</p>
     </div>
-
     <div class="card">
       <h3>Motto</h3>
       <p><strong>Education Is Gold</strong></p>
@@ -337,11 +331,11 @@ footer{
       <h2>Core Values</h2>
     </div>
     <ul class="values">
-      <li>Integrity & diligence</li>
-      <li>Discipline & fairness</li>
-      <li>Creativity & innovation</li>
-      <li>Respect & responsibility</li>
-      <li>Quality service delivery</li>
+      <li>Integrity & Diligence</li>
+      <li>Discipline & Fairness</li>
+      <li>Creativity & Innovation</li>
+      <li>Respect & Responsibility</li>
+      <li>Quality Service Delivery</li>
     </ul>
   </div>
 </section>
@@ -349,9 +343,9 @@ footer{
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="footer-social">
-    <a><i class="fab fa-facebook-f"></i></a>
-    <a><i class="fab fa-instagram"></i></a>
-    <a><i class="fab fa-x-twitter"></i></a>
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-x-twitter"></i></a>
   </div>
   <p>© 2026 Uhuru Peak School | All Rights Reserved</p>
 </footer>
