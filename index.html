@@ -1,360 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Uhuru Peak School | Education Is Gold</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Uhuru Peak School | Education Is Gold</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --feza-navy: #1b2d4b;
+            --feza-gold: #c5a059;
+            --white: #ffffff;
+            --footer-bg: #0a1629;
+        }
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        body { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background: var(--white); overflow-x: hidden; }
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        /* --- Header --- */
+        header {
+            background: var(--white); height: 80px; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 5%; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand img { height: 50px; }
+        .brand-text h1 { font-size: 0.95rem; margin: 0; color: var(--feza-navy); font-weight: 800; line-height: 1.1; }
+        .brand-text span { font-size: 0.65rem; color: var(--feza-gold); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-<style>
-:root{
-  --primary:#1e5fa3;
-  --secondary:#0c3c78;
-  --light:#f5f7fa;
-  --dark:#222;
-}
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .search-trigger { font-size: 1.2rem; color: var(--feza-navy); cursor: pointer; }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Montserrat',sans-serif;
-}
+        .hamburger {
+            width: 30px; height: 20px;
+            display: flex; flex-direction: column; justify-content: space-between;
+            cursor: pointer; z-index: 2001;
+        }
+        .hamburger span { display: block; width: 100%; height: 2px; background: var(--feza-navy); transition: 0.3s; }
 
-body{
-  color:#333;
-  background:#fff;
-}
+        /* --- Side Menu with X Close --- */
+        .side-menu {
+            position: fixed; top: 0; right: -100%; width: 100%; height: 100vh;
+            background: var(--white); z-index: 2000; transition: 0.4s ease;
+            padding: 20px 5% 30px; box-sizing: border-box; overflow-y: auto;
+        }
+        .side-menu.open { right: 0; }
+        .menu-close { display: flex; justify-content: flex-end; font-size: 2.5rem; color: var(--feza-navy); cursor: pointer; padding-bottom: 10px; }
 
-/* ================= HEADER ================= */
-header{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  background:#fff;
-  border-bottom:1px solid #ddd;
-  z-index:1000;
-}
+        .menu-search-container { width: 100%; margin-bottom: 20px; position: relative; }
+        .menu-search-container input { width: 100%; padding: 15px; border: 1px solid #eee; border-radius: 4px; outline: none; font-family: 'Montserrat'; }
+        .side-menu a { display: block; padding: 18px 0; color: var(--feza-navy); text-decoration: none; font-weight: 700; font-size: 1.1rem; border-bottom: 1px solid #f0f0f0; text-transform: uppercase; }
 
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:14px 20px;
-}
+        /* --- Slider Section --- */
+        .slider-box { position: relative; height: 550px; background: #000; overflow: hidden; }
+        .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+        .slide.active { opacity: 1; }
+        .slide-img { position: absolute; width: 100%; height: 100%; background-size: cover; background-position: center; z-index: 1; }
+        .slide-overlay { position: relative; z-index: 2; background: rgba(0,0,0,0.4); width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 0 10%; }
+        .slide-overlay h2 { font-size: 2.5rem; text-transform: uppercase; font-weight: 800; }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+        /* --- Info Strips (The restored part) --- */
+        .info-strip { background: var(--feza-navy); color: white; padding: 40px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .info-strip i { font-size: 2.5rem; color: var(--feza-gold); }
+        .info-strip h3 { margin: 0; font-size: 1.3rem; font-weight: 800; }
+        .info-strip p { margin: 5px 0 0 0; font-size: 0.9rem; opacity: 0.8; }
 
-.logo img{
-  height:42px;
-}
+        /* --- Values Section --- */
+        .content-section { padding: 60px 8%; }
+        .content-section h2 { font-size: 1.8rem; color: var(--feza-navy); font-weight: 800; margin-bottom: 25px; text-transform: uppercase; border-left: 5px solid var(--feza-gold); padding-left: 15px; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .value-item { padding: 15px; background: #f9f9f9; font-weight: 600; color: var(--feza-navy); border-left: 3px solid var(--feza-gold); }
 
-.logo span{
-  font-size:18px;
-  font-weight:700;
-  color:var(--primary);
-}
-
-/* ================= HAMBURGER ================= */
-.hamburger{
-  width:26px;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
-  cursor:pointer;
-}
-
-.hamburger span{
-  width:100%;
-  height:3px;
-  background:var(--primary);
-  border-radius:3px;
-}
-
-/* ================= MOBILE MENU ================= */
-.mobile-menu{
-  position:fixed;
-  top:0;
-  right:-100%;
-  width:85%;
-  height:100vh;
-  background:#fff;
-  box-shadow:-5px 0 25px rgba(0,0,0,0.2);
-  transition:0.4s;
-  padding:25px;
-  z-index:2000;
-}
-
-.mobile-menu.active{
-  right:0;
-}
-
-.menu-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:20px;
-}
-
-.menu-header h3{
-  color:var(--primary);
-}
-
-.close-btn{
-  font-size:28px;
-  cursor:pointer;
-  color:var(--primary);
-}
-
-/* Search */
-.search-box{
-  border-bottom:1px solid #ccc;
-  padding-bottom:10px;
-  margin-bottom:25px;
-}
-
-.search-box input{
-  width:100%;
-  border:none;
-  outline:none;
-  font-size:16px;
-}
-
-/* Menu links */
-.menu-list a{
-  display:block;
-  padding:14px 0;
-  border-bottom:1px solid #eee;
-  text-decoration:none;
-  color:var(--primary);
-  font-weight:600;
-  transition:0.3s;
-}
-
-.menu-list a:hover{
-  padding-left:8px;
-}
-
-/* ================= HERO ================= */
-.hero{
-  margin-top:80px;
-  background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-  url("https://images.unsplash.com/") center/cover;
-  color:#fff;
-  padding:90px 20px;
-  text-align:center;
-}
-
-.hero h1{
-  font-size:36px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  font-size:18px;
-  margin-bottom:25px;
-}
-
-.btn{
-  background:var(--primary);
-  color:#fff;
-  padding:14px 28px;
-  border-radius:30px;
-  text-decoration:none;
-  font-weight:600;
-}
-
-/* ================= SECTIONS ================= */
-section{
-  padding:60px 20px;
-}
-
-.container{
-  max-width:1100px;
-  margin:auto;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:40px;
-}
-
-.section-title h2{
-  color:var(--primary);
-  font-size:30px;
-}
-
-/* Cards */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.card{
-  background:#fff;
-  padding:25px;
-  border-radius:12px;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-
-.card h3{
-  color:var(--secondary);
-  margin-bottom:10px;
-}
-
-/* Values */
-.values li{
-  margin-bottom:10px;
-}
-
-/* ================= FOOTER ================= */
-footer{
-  background:var(--secondary);
-  color:#fff;
-  padding:40px 20px;
-  text-align:center;
-}
-
-.footer-social{
-  margin-bottom:15px;
-}
-
-.footer-social a{
-  color:#fff;
-  font-size:22px;
-  margin:0 10px;
-  text-decoration:none;
-}
-
-/* Desktop hide hamburger */
-@media(min-width:768px){
-  .hamburger{
-    display:none;
-  }
-}
-</style>
+        /* --- Footer --- */
+        footer { background: var(--footer-bg); color: #c4cfde; padding: 60px 8% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.05); margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .footer-socials { display: flex; gap: 20px; }
+        .footer-socials a { color: #fff; font-size: 1.3rem; transition: 0.3s; }
+        .footer-socials a:hover { color: var(--feza-gold); }
+    </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
-  <div class="header-inner">
-    <div class="logo">
-      <img src="images/uhuru.jpg" alt="Uhuru Peak School">
-      <span>Uhuru Peak School</span>
+    <a href="index.html" class="brand">
+        <img src="images/uhuru.jpg" alt="Uhuru Logo">
+        <div class="brand-text"><h1>UHURU PEAK SCHOOL</h1><span>Education Is Gold</span></div>
+    </a>
+    <div class="nav-right">
+        <i class="fas fa-search search-trigger" onclick="openSearch()"></i>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
     </div>
-
-    <div class="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
 </header>
 
-<!-- ================= MOBILE MENU ================= -->
-<div class="mobile-menu" id="menu">
-  <div class="menu-header">
-    <h3>MENU</h3>
-    <div class="close-btn" onclick="toggleMenu()">×</div>
-  </div>
-
-  <div class="search-box">
-    <input type="text" placeholder="Search...">
-  </div>
-
-  <div class="menu-list">
-    <a href="about.html">About Us</a>
-    <a href="academics.html">Academics</a>
-    <a href="programs.html">Programs</a>
-    <a href="admission.html">Admission</a>
-    <a href="news.html">News</a>
-    <a href="contacts.html">Contacts</a>
-    <a href="staffs.html">Staff</a>
-  </div>
+<div class="side-menu" id="sideNav">
+    <div class="menu-close" onclick="toggleMenu()">&times;</div>
+    <div class="menu-search-container">
+        <input type="text" id="menuSearchInput" placeholder="Search...">
+    </div>
+    <nav>
+        <a href="index.html">Home</a><a href="about.html">About Us</a><a href="admission.html">Admissions</a>
+        <a href="programs.html">Programs</a><a href="academics.html">Academics</a><a href="campuses.html">Campuses</a>
+        <a href="staffs.html">Staff</a><a href="news.html">News</a><a href="contacts.html">Contacts</a>
+    </nav>
 </div>
 
-<!-- ================= HERO ================= -->
-<div class="hero">
-  <h1>Uhuru Peak School</h1>
-  <p>Education Is Gold</p>
-  <a href="contact.html" class="btn">Contact Us</a>
-</div>
-
-<!-- ================= ABOUT ================= -->
-<section>
-  <div class="container">
-    <div class="section-title">
-      <h2>About Our School</h2>
-    </div>
-    <p>
-      Uhuru Peak School is committed to providing quality and affordable education
-      to all deserving children without discrimination of any kind.
-    </p>
-  </div>
+<section class="slider-box">
+    <div class="slide active"><div class="slide-img" style="background-image: url('images/slide1.jpg')"></div><div class="slide-overlay"><h2>Welcome to Uhuru Peak</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide2.jpg')"></div><div class="slide-overlay"><h2>Modern Classrooms</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide3.jpg')"></div><div class="slide-overlay"><h2>Safe Transportation</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide4.jpg')"></div><div class="slide-overlay"><h2>Student Enjoyment</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide5.jpg')"></div><div class="slide-overlay"><h2>Holistic Growth</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide6.jpg')"></div><div class="slide-overlay"><h2>Active Sports</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide7.jpg')"></div><div class="slide-overlay"><h2>Science & Tech</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide8.jpg')"></div><div class="slide-overlay"><h2>Qualified Staff</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide9.jpg')"></div><div class="slide-overlay"><h2>Creative Arts</h2></div></div>
+    <div class="slide"><div class="slide-img" style="background-image: url('images/slide10.jpg')"></div><div class="slide-overlay"><h2>Education Is Gold</h2></div></div>
 </section>
 
-<!-- ================= VISION & MISSION ================= -->
-<section style="background:var(--light)">
-  <div class="container cards">
-    <div class="card">
-      <h3>Vision</h3>
-      <p>To ensure quality and affordable education for all.</p>
+<section class="info-strip"><div><h3>Safe Transport</h3><p>Reliable door-to-door shuttle service.</p></div><i class="fas fa-bus"></i></section>
+<section class="info-strip"><div><h3>Smart Classrooms</h3><p>Equipped with modern learning tools.</p></div><i class="fas fa-chalkboard-teacher"></i></section>
+<section class="info-strip"><div><h3>Enjoyment</h3><p>Learning through play and fun.</p></div><i class="fas fa-smile"></i></section>
+
+<section class="content-section">
+    <h2>Our Core Values</h2>
+    <div class="values-grid">
+        <div class="value-item">1. Good Customer Care</div>
+        <div class="value-item">2. Integrity and Diligence</div>
+        <div class="value-item">3. Serving with Discipline</div>
+        <div class="value-item">4. Creativity and Tolerance</div>
     </div>
-    <div class="card">
-      <h3>Mission</h3>
-      <p>To offer holistic education focusing on mental, spiritual and social growth.</p>
-    </div>
-    <div class="card">
-      <h3>Motto</h3>
-      <p><strong>Education Is Gold</strong></p>
-    </div>
-  </div>
 </section>
 
-<!-- ================= CORE VALUES ================= -->
-<section>
-  <div class="container">
-    <div class="section-title">
-      <h2>Core Values</h2>
-    </div>
-    <ul class="values">
-      <li>Integrity & Diligence</li>
-      <li>Discipline & Fairness</li>
-      <li>Creativity & Innovation</li>
-      <li>Respect & Responsibility</li>
-      <li>Quality Service Delivery</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
 <footer>
-  <div class="footer-social">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-x-twitter"></i></a>
-  </div>
-  <p>© 2026 Uhuru Peak School | All Rights Reserved</p>
+    <div class="footer-grid">
+        <div class="footer-col"><h4>Uhuru Peak</h4><p>Nurturing the best citizens through holistic education.</p></div>
+        <div class="footer-col"><h4>Contact</h4><p>info@uhurupeak.ac.tz</p><p>+255 123 456 789</p></div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Uhuru Peak School. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
 </footer>
 
 <script>
-function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
-}
-</script>
+    function toggleMenu() { document.getElementById('sideNav').classList.toggle('open'); }
+    function openSearch() { document.getElementById('sideNav').classList.add('open'); setTimeout(() => { document.getElementById('menuSearchInput').focus(); }, 400); }
 
+    let current = 0; 
+    const slides = document.querySelectorAll('.slide');
+    function showSlide(n) { 
+        slides[current].classList.remove('active'); 
+        current = (n + slides.length) % slides.length; 
+        slides[current].classList.add('active'); 
+    }
+    setInterval(() => showSlide(current + 1), 5000);
+</script>
 </body>
 </html>
+
